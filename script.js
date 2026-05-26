@@ -86,7 +86,7 @@ if (currentPage === "index.html" || currentPage === "") {
         };
     }
 
-    // ADMIN LOGIN (Unchanged)
+    // ADMIN LOGIN
     if (adminForm) {
         adminForm.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -103,7 +103,7 @@ if (currentPage === "index.html" || currentPage === "") {
     }
 
     // ======================
-    // STUDENT LOGIN - GOOGLE SHEETS
+    // STUDENT LOGIN - GOOGLE SHEETS (CORS Fixed)
     // ======================
     if (studentForm) {
         studentForm.addEventListener("submit", async (e) => {
@@ -118,7 +118,6 @@ if (currentPage === "index.html" || currentPage === "") {
                 return;
             }
 
-            // Show loading state (optional)
             const submitBtn = studentForm.querySelector("button");
             const originalBtnText = submitBtn.textContent;
             submitBtn.textContent = "Verifying...";
@@ -127,15 +126,16 @@ if (currentPage === "index.html" || currentPage === "") {
             try {
                 const response = await fetch(WEB_APP_URL, {
                     method: "POST",
+                    headers: {
+                        "Content-Type": "text/plain;charset=utf-8"   // Fixed for Google Apps Script
+                    },
                     body: JSON.stringify({
                         action: "verifyStudent",
                         name: studentName,
                         email: studentEmail,
                         code: studentId
                     }),
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
+                    redirect: "follow"
                 });
 
                 const result = await response.json();
@@ -145,14 +145,14 @@ if (currentPage === "index.html" || currentPage === "") {
                     localStorage.setItem("student_id", studentId);
                     localStorage.setItem("student_name", studentName);
 
-                    alert("Login Successful! Welcome " + studentName);
+                    alert("✅ Login Successful! Welcome " + studentName);
                     window.location.href = "student.html";
                 } else {
-                    alert("Invalid Credentials. Please check your Name, Email & Certificate ID.");
+                    alert(result.message || "❌ Invalid Credentials. Please check your details.");
                 }
             } catch (error) {
-                console.error(error);
-                alert("Connection error. Please check your internet and try again.");
+                console.error("Login Error:", error);
+                alert("Connection error. Please check your internet or Apps Script deployment.");
             } finally {
                 submitBtn.textContent = originalBtnText;
                 submitBtn.disabled = false;
@@ -164,7 +164,7 @@ if (currentPage === "index.html" || currentPage === "") {
 
 
 // ============================================
-// ADMIN PAGE (Unchanged)
+// ADMIN PAGE
 // ============================================
 
 if (currentPage === "admin.html") {
@@ -270,7 +270,7 @@ if (currentPage === "admin.html") {
 
 
 // ============================================
-// STUDENT PAGE (Unchanged)
+// STUDENT PAGE & JOB DETAILS (Unchanged)
 // ============================================
 
 if (currentPage === "student.html") {
@@ -310,7 +310,6 @@ if (currentPage === "student.html") {
         });
     }
 
-    // Filters & other functions remain same...
     const mainTabs = document.querySelectorAll(".main-tab");
     const subTabs = document.querySelectorAll(".sub-tab");
     const sortBtns = document.querySelectorAll(".sort-btn");
@@ -387,12 +386,6 @@ if (currentPage === "student.html") {
 
     applyFilters();
 }
-
-
-
-// ============================================
-// JOB DETAILS PAGE (Unchanged)
-// ============================================
 
 if (currentPage === "job-details.html") {
     const jobs = JSON.parse(localStorage.getItem("topgrade_jobs")) || [];
