@@ -2,7 +2,7 @@
 const currentPage = window.location.pathname.split("/").pop();
 
 // Web App URL for Google Apps Script
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyraOJCHjWYALKABuGz5QTIzI-y140oKQDBVICRlk3DGqEkkJdm-T09iILeZy0PNKG2XA/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzX8XThJwoEGNuVL-NKN7K41hYv_3QbLNdWyhwosoolLERe6C2EmXuu6yp8L6MJh49kYw/exec";
 
 
 // ============================================
