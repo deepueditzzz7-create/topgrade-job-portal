@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>TopGrade Portal</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+
+  <div class="login-page">
+
+
+    <!-- LEFT SIDE -->
+    <div class="login-left">
+
+      <img
+        src="Logo.png"
+        alt="TopGrade Logo"
+        class="main-logo"
+      />
+
+      <h1>
+        TOPGRADE PORTAL
+      </h1>
+
+      <p>
+        Student Opportunities Platform
+      </p>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+    <div class="login-right">
+
+
+      <!-- TAB BUTTONS -->
+      <div class="login-tabs">
+
+        <button
+          id="adminTab"
+          class="tab-btn active"
+        >
+          Admin Login
+        </button>
+
+        <button
+          id="studentTab"
+          class="tab-btn"
+        >
+          Student Login
+        </button>
+
+      </div>
+
+
+
+      <!-- ADMIN LOGIN -->
+      <form
+        id="adminLoginForm"
+        class="login-form"
+      >
+
+        <h2>Admin Login</h2>
+
+        <input
+          type="email"
+          id="adminEmail"
+          placeholder="Admin Email"
+          required
+        />
+
+        <input
+          type="password"
+          id="adminPassword"
+          placeholder="Password"
+          required
+        />
+
+        <button type="submit">
+          Login as Admin
+        </button>
+
+      </form>
+
+
+
+      <!-- STUDENT LOGIN -->
+      <form
+        id="studentLoginForm"
+        class="login-form hidden"
+      >
+
+        <h2>Student Login</h2>
+
+        <input
+          type="text"
+          id="studentId"
+          placeholder="Certification Number"
+          required
+        />
+
+        <button type="submit">
+          Enter Student Portal
+        </button>
+
+        <p class="hint-text">
+          Example IDs:
+          TG001 ,
+          TG002 ,
+          TG003
+        </p>
+
+      </form>
+
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

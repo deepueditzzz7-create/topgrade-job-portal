@@ -1,0 +1,647 @@
+/* =========================================
+   GOOGLE FONT
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff7f0;
+    color:#222;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.hidden{
+    display:none !important;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar{
+    width:100%;
+    background:white;
+    padding:12px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 20px rgba(0,0,0,0.06);
+    position:sticky;
+    top:0;
+    z-index:100;
+    border-bottom:2px solid #fff0e6;
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.nav-left h2{
+    color:#ff6b00;
+    font-size:24px;
+    font-weight:700;
+}
+
+.nav-logo{
+    width:180px;
+    height:180px;
+    object-fit:contain;
+    display:block;
+    flex-shrink:0;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.welcome-text{
+    font-weight:600;
+    color:#444;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button{
+    cursor:pointer;
+    border:none;
+    transition:0.3s ease;
+}
+
+.logout-btn,
+.back-btn,
+.primary-btn{
+    background:linear-gradient(135deg,#ff6b00,#ff914d);
+    color:white;
+    padding:13px 24px;
+    border-radius:14px;
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 5px 15px rgba(255,107,0,0.2);
+}
+
+.logout-btn:hover,
+.back-btn:hover,
+.primary-btn:hover{
+    transform:translateY(-2px);
+    background:linear-gradient(135deg,#e55d00,#ff7a1a);
+}
+
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.login-left{
+    background:linear-gradient(135deg,#ff6b00,#ff914d);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.main-logo{
+    width:200px;
+    height:200px;
+    object-fit:contain;
+    margin-bottom:25px;
+
+    background:rgba(255,255,255,0.95);
+    padding:20px 35px;
+    border-radius:40px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.12),
+        inset 0 1px 2px rgba(255,255,255,0.8);
+}
+
+.login-left h1{
+    font-size:44px;
+    margin-bottom:12px;
+    font-weight:700;
+}
+
+.login-left p{
+    font-size:18px;
+    opacity:0.95;
+    max-width:500px;
+    line-height:1.7;
+}
+
+.login-right{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:60px;
+    background:white;
+}
+
+
+/* =========================================
+   LOGIN TABS
+========================================= */
+
+.login-tabs{
+    display:flex;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.tab-btn{
+    flex:1;
+    padding:14px;
+    background:#ffe7d6;
+    border-radius:14px;
+    font-weight:600;
+    color:#ff6b00;
+    border:none;
+}
+
+.tab-btn.active{
+    background:#ff6b00;
+    color:white;
+}
+
+
+/* =========================================
+   FORMS
+========================================= */
+
+.login-form,
+.form-section{
+    background:white;
+    border-radius:22px;
+}
+
+.login-form h2,
+.form-section h2,
+.posted-jobs h2{
+    margin-bottom:25px;
+    color:#ff6b00;
+    font-size:28px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:15px 16px;
+    border:2px solid #ffe1cc;
+    border-radius:14px;
+    margin-bottom:18px;
+    outline:none;
+    font-size:15px;
+    transition:0.3s;
+    background:white;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#ff6b00;
+    box-shadow:0 0 0 4px rgba(255,107,0,0.08);
+}
+
+textarea{
+    min-height:120px;
+    resize:none;
+}
+
+form button{
+    width:100%;
+    background:linear-gradient(135deg,#ff6b00,#ff914d);
+    color:white;
+    padding:15px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:600;
+}
+
+form button:hover{
+    background:linear-gradient(135deg,#e55d00,#ff7a1a);
+}
+
+.hint-text{
+    margin-top:15px;
+    color:#777;
+    font-size:14px;
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-container,
+.admin-dashboard{
+    padding:35px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+    margin-bottom:35px;
+}
+
+.stat-card{
+    background:white;
+    padding:28px;
+    border-radius:22px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.06);
+    border:2px solid #fff0e6;
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+}
+
+.stat-card h3{
+    color:#777;
+    margin-bottom:15px;
+    font-size:17px;
+}
+
+.stat-card h1{
+    color:#ff6b00;
+    font-size:42px;
+}
+
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.main-tabs,
+.sub-tabs,
+.sort-tabs{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.main-tabs{
+    margin-bottom:20px;
+}
+
+.sub-filters{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.main-tab,
+.sub-tab,
+.sort-btn{
+    padding:12px 20px;
+    border-radius:14px;
+    background:white;
+    border:2px solid #ffd8bf;
+    color:#ff6b00;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.main-tab:hover,
+.sub-tab:hover,
+.sort-btn:hover{
+    background:#fff0e6;
+}
+
+.main-tab.active,
+.sub-tab.active,
+.sort-btn.active{
+    background:#ff6b00;
+    color:white;
+    border-color:#ff6b00;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-wrapper{
+    margin-bottom:30px;
+}
+
+.search-input{
+    background:white;
+}
+
+
+/* =========================================
+   JOB GRID
+========================================= */
+
+.jobs-grid,
+#adminJobsList{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+
+/* =========================================
+   JOB CARD
+========================================= */
+
+.job-card{
+    background:white;
+    border-radius:24px;
+    padding:25px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.06);
+    border:2px solid #fff0e6;
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.job-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 30px rgba(255,107,0,0.12);
+}
+
+.job-card h1,
+.job-card h2,
+.job-card h3{
+    color:#ff6b00;
+    margin-bottom:14px;
+}
+
+.job-card p{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+
+/* =========================================
+   TAG
+========================================= */
+
+.tag{
+    display:inline-block;
+    padding:8px 16px;
+    background:#fff0e6;
+    color:#ff6b00;
+    border-radius:40px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+
+/* =========================================
+   CARD BUTTONS
+========================================= */
+
+.card-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.view-btn,
+.apply-btn,
+.edit-btn,
+.delete-btn{
+    flex:1;
+    min-width:120px;
+    text-align:center;
+    padding:13px;
+    border-radius:14px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.view-btn:hover,
+.apply-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover{
+    transform:translateY(-2px);
+}
+
+.view-btn{
+    background:#ff6b00;
+}
+
+.apply-btn{
+    background:#22a55a;
+}
+
+.edit-btn{
+    background:#ff9800;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+
+/* =========================================
+   DETAILS PAGE
+========================================= */
+
+.details-container{
+    padding:40px;
+    max-width:900px;
+    margin:auto;
+}
+
+.details-card{
+    background:white;
+    border-radius:24px;
+    padding:30px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.06);
+}
+
+
+/* =========================================
+   EMPTY STATES
+========================================= */
+
+.no-data,
+.empty-message,
+.details-error{
+    background:white;
+    padding:50px;
+    border-radius:24px;
+    text-align:center;
+    margin-top:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
+
+.no-data h2,
+.details-error h2{
+    color:#ff6b00;
+    margin-bottom:10px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+    .login-page{
+        grid-template-columns:1fr;
+    }
+
+    .login-left{
+        padding:50px 25px;
+    }
+
+    .login-right{
+        padding:40px 25px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:15px 20px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:12px;
+    }
+
+    .nav-left{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .nav-logo{
+        width:150px;
+        height:150px;
+    }
+
+    .dashboard-container,
+    .admin-dashboard,
+    .details-container{
+        padding:20px;
+    }
+
+    .sub-filters{
+        flex-direction:column;
+    }
+
+    .main-tabs,
+    .sub-tabs,
+    .sort-tabs{
+        width:100%;
+    }
+
+    .main-tab,
+    .sub-tab,
+    .sort-btn{
+        flex:1;
+        text-align:center;
+    }
+
+    .card-buttons{
+        flex-direction:column;
+    }
+
+    .view-btn,
+    .apply-btn,
+    .edit-btn,
+    .delete-btn{
+        width:100%;
+    }
+
+    .login-left h1{
+        font-size:32px;
+    }
+
+    .login-left p{
+        font-size:16px;
+    }
+
+    .main-logo{
+        width:160px;
+        height:160px;
+        padding:18px 28px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .nav-left h2{
+        font-size:20px;
+    }
+
+    .main-logo{
+        width:140px;
+        height:140px;
+        border-radius:28px;
+    }
+
+    .login-left h1{
+        font-size:28px;
+    }
+
+    .job-card{
+        padding:20px;
+    }
+
+    .jobs-grid,
+    #adminJobsList{
+        grid-template-columns:1fr;
+    }
+
+    .stat-card h1{
+        font-size:34px;
+    }
+
+}

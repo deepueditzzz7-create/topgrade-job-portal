@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard - TopGrade</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+
+    <div class="nav-left">
+      <img src="Logo.png" alt="TopGrade Logo" class="nav-logo">
+    </div>
+
+    <div class="nav-right">
+
+      <span id="studentWelcome" class="welcome-text">
+        Welcome
+      </span>
+
+      <button id="studentLogoutBtn" class="logout-btn">
+        Logout
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="dashboard-container">
+
+
+    <!-- MAIN CATEGORY BUTTONS -->
+    <div class="main-tabs">
+
+      <button
+        class="main-tab active"
+        data-category="Jobs"
+      >
+        Jobs
+      </button>
+
+      <button
+        class="main-tab"
+        data-category="Hackathons"
+      >
+        Hackathons
+      </button>
+
+      <button
+        class="main-tab"
+        data-category="Competitions"
+      >
+        Competitions
+      </button>
+
+      <button
+        class="main-tab"
+        data-category="Internships"
+      >
+        Internships
+      </button>
+
+    </div>
+
+
+    <!-- JOB SUB FILTERS -->
+    <div class="sub-filters">
+
+      <div class="sub-tabs">
+
+        <button
+          class="sub-tab active"
+          data-type="All Jobs"
+        >
+          All Jobs
+        </button>
+
+        <button
+          class="sub-tab"
+          data-type="Fresher"
+        >
+          Fresher
+        </button>
+
+        <button
+          class="sub-tab"
+          data-type="Internship"
+        >
+          Internship
+        </button>
+
+        <button
+          class="sub-tab"
+          data-type="Full Time"
+        >
+          Full Time
+        </button>
+
+        <button
+          class="sub-tab"
+          data-type="Experienced"
+        >
+          Experienced
+        </button>
+
+      </div>
+
+
+      <!-- SORT BUTTONS -->
+      <div class="sort-tabs">
+
+        <button
+          class="sort-btn active"
+          data-sort="new"
+        >
+          New to Old
+        </button>
+
+        <button
+          class="sort-btn"
+          data-sort="old"
+        >
+          Old to New
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+    <div class="search-wrapper">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by title, company or type..."
+        class="search-input"
+      />
+
+    </div>
+
+
+    <!-- JOB CARDS -->
+    <div id="jobsContainer" class="jobs-grid">
+
+      <!-- Dynamic Jobs -->
+
+    </div>
+
+
+    <!-- NO DATA -->
+    <div id="noData" class="no-data hidden">
+
+      <h2>No Opportunities Found</h2>
+
+      <p>
+        Try changing filters or search keywords.
+      </p>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
