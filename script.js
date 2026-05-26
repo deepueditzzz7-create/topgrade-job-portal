@@ -1,7 +1,4 @@
-// ============================================
-// TOPGRADE PORTAL - FINAL UPDATED SCRIPT
-// ============================================
-
+// FORCE UPDATE - 26 May 2026 - Student Google Sheets Login Active
 const currentPage = window.location.pathname.split("/").pop();
 
 // Web App URL for Google Apps Script
