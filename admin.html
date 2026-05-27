@@ -2,201 +2,77 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard</title>
-
   <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
-
     <div class="nav-left">
-
-      <img
-        src="Logo.png"
-        class="nav-logo"
-      />
-
+      <img src="Logo.png" class="nav-logo" />
       <h2>TopGrade Admin</h2>
-
     </div>
-
     <div class="nav-right">
-
-      <button
-        id="adminLogoutBtn"
-        class="logout-btn"
-      >
-        Logout
-      </button>
-
+      <button id="refreshBtn" class="refresh-btn">Refresh</button>
+      <button id="adminLogoutBtn" class="logout-btn">Logout</button>
     </div>
-
   </nav>
 
-  <!-- DASHBOARD -->
   <div class="admin-dashboard">
-
-    <!-- STATS -->
     <div class="stats-grid">
-
       <div class="stat-card">
-
         <h3>Total Jobs</h3>
-
         <h1 id="jobsCount">0</h1>
-
       </div>
-
       <div class="stat-card">
-
         <h3>Internships</h3>
-
         <h1 id="internshipCount">0</h1>
-
       </div>
-
       <div class="stat-card">
-
         <h3>Hackathons</h3>
-
         <h1 id="hackathonCount">0</h1>
-
       </div>
-
       <div class="stat-card">
-
         <h3>Competitions</h3>
-
         <h1 id="competitionCount">0</h1>
-
       </div>
-
     </div>
 
-    <!-- ADD JOB -->
     <div class="form-section">
-
-      <h2>Post Opportunity</h2>
-
+      <h2 id="formTitle">Post Opportunity</h2>
       <form id="addJobForm">
-
-        <input
-          type="text"
-          id="jobTitle"
-          placeholder="Job Title"
-          required
-        />
-
-        <input
-          type="text"
-          id="companyName"
-          placeholder="Company Name"
-          required
-        />
-
+        <input type="hidden" id="editingJobId" value="">
+        <input type="text" id="jobTitle" placeholder="Job Title" required />
+        <input type="text" id="companyName" placeholder="Company Name" required />
         <select id="category">
-
-          <option value="Jobs">
-            Jobs
-          </option>
-
-          <option value="Internships">
-            Internships
-          </option>
-
-          <option value="Hackathons">
-            Hackathons
-          </option>
-
-          <option value="Competitions">
-            Competitions
-          </option>
-
+          <option value="Jobs">Jobs</option>
+          <option value="Internships">Internships</option>
+          <option value="Hackathons">Hackathons</option>
+          <option value="Competitions">Competitions</option>
         </select>
-
         <select id="jobType">
-
-          <option value="Full Time">
-            Full Time
-          </option>
-
-          <option value="Internship">
-            Internship
-          </option>
-
-          <option value="Fresher">
-            Fresher
-          </option>
-
-          <option value="Experienced">
-            Experienced
-          </option>
-
+          <option value="Full Time">Full Time</option>
+          <option value="Internship">Internship</option>
+          <option value="Fresher">Fresher</option>
+          <option value="Experienced">Experienced</option>
         </select>
-
-        <input
-          type="text"
-          id="location"
-          placeholder="Location"
-          required
-        />
-
-        <input
-          type="text"
-          id="salary"
-          placeholder="Salary / Stipend"
-          required
-        />
-
-        <textarea
-          id="description"
-          placeholder="Description"
-          required
-        ></textarea>
-
-        <input
-          type="text"
-          id="applyLink"
-          placeholder="Apply Link OR HR Email"
-          required
-        />
-
-        <button type="submit">
-
-          Post Opportunity
-
-        </button>
-
+        <input type="text" id="location" placeholder="Location" required />
+        <input type="text" id="salary" placeholder="Salary / Stipend" required />
+        <textarea id="description" placeholder="Description" required></textarea>
+        <input type="text" id="applyLink" placeholder="Apply Link OR HR Email" required />
+        <button type="submit" id="submitBtn">Post Opportunity</button>
       </form>
-
     </div>
 
-    <!-- POSTED JOBS -->
     <div class="posted-jobs">
-
       <h2>Posted Opportunities</h2>
-
-      <div id="adminJobsList">
-
-      </div>
-
+      <div id="adminJobsList"></div>
     </div>
-
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>

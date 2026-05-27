@@ -4,58 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Job Details - TopGrade</title>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
-
     <div class="nav-left">
       <img src="Logo.png" alt="TopGrade Logo" class="nav-logo">
     </div>
-
     <div class="nav-right">
-
       <button class="back-btn" onclick="window.location.href='student.html'">
-        ← Back
+        ← Back to Dashboard
       </button>
-
     </div>
-
   </nav>
 
   <!-- DETAILS CONTAINER -->
   <div class="details-container">
-
     <div class="details-card" id="jobDetailsContainer">
-
-      <!-- Dynamic Job Details -->
-
+      <!-- Job details will be loaded here -->
     </div>
 
-    <!-- NO DATA -->
+    <!-- Error Message -->
     <div id="detailsError" class="details-error hidden">
-
       <h2>Job Not Found</h2>
-
-      <p>
-        The requested opportunity does not exist or may have been removed.
-      </p>
-
-      <button
-        class="primary-btn"
-        onclick="window.location.href='student.html'"
-      >
+      <p>The requested opportunity does not exist or may have been removed.</p>
+      <button class="primary-btn" onclick="window.location.href='student.html'">
         Return to Dashboard
       </button>
-
     </div>
-
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
