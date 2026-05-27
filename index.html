@@ -16,7 +16,6 @@
 
   <div class="login-page">
 
-
     <!-- LEFT SIDE -->
     <div class="login-left">
 
@@ -36,11 +35,8 @@
 
     </div>
 
-
-
     <!-- RIGHT SIDE -->
     <div class="login-right">
-
 
       <!-- TAB BUTTONS -->
       <div class="login-tabs">
@@ -60,8 +56,6 @@
         </button>
 
       </div>
-
-
 
       <!-- ADMIN LOGIN -->
       <form
@@ -91,44 +85,40 @@
 
       </form>
 
+      <!-- STUDENT LOGIN -->
+      <form
+        id="studentLoginForm"
+        class="login-form hidden"
+      >
 
+        <h2>Student Login</h2>
 
-<!-- STUDENT LOGIN -->
-<form
-  id="studentLoginForm"
-  class="login-form hidden"
->
+        <input
+          type="text"
+          id="studentId"
+          placeholder="Certificate ID"
+          required
+        />
 
-  <h2>Student Login</h2>
+        <input
+          type="text"
+          id="studentName"
+          placeholder="Full Name"
+          required
+        />
 
-  <input
-    type="text"
-    id="studentId"
-    placeholder="Certificate ID"
-    required
-  />
+        <input
+          type="email"
+          id="studentEmail"
+          placeholder="Email Address"
+          required
+        />
 
-  <input
-    type="text"
-    id="studentName"
-    placeholder="Full Name"
-    required
-  />
+        <button type="submit">
+          Enter Student Portal
+        </button>
 
-  <input
-    type="email"
-    id="studentEmail"
-    placeholder="Email Address"
-    required
-  />
-
-  <button type="submit">
-    Enter Student Portal
-  </button>
-
-</form>
-
-
+      </form>
 
     </div>
 

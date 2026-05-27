@@ -19,20 +19,18 @@
 <body>
 
   <!-- PROTECTED ROUTE -->
- <script>
+  <script>
 
-if (
-  localStorage.getItem("role") !== "student"
-) {
+    if (
+      localStorage.getItem("role") !== "student"
+    ) {
 
-  window.location.href =
-  "index.html";
+      window.location.href =
+      "index.html";
 
-}
+    }
 
-</script>
-
-
+  </script>
 
   <!-- NAVBAR -->
   <nav class="navbar">
@@ -47,18 +45,13 @@ if (
 
     </div>
 
-
-
     <div class="nav-right">
 
       <span
         id="studentWelcome"
         class="welcome-text"
       >
-        Welcome Student
       </span>
-
-
 
       <!-- THEME TOGGLE -->
       <button
@@ -67,8 +60,6 @@ if (
       >
         🌙
       </button>
-
-
 
       <!-- LOGOUT -->
       <button
@@ -82,21 +73,17 @@ if (
 
   </nav>
 
-
-
   <!-- MAIN CONTENT -->
   <div class="dashboard-container">
-
-
 
     <!-- MAIN CATEGORY BUTTONS -->
     <div class="main-tabs">
 
       <button
         class="main-tab active"
-        data-category="Jobs"
+        data-category="All Jobs"
       >
-        Jobs
+        All Jobs
       </button>
 
       <button
@@ -122,32 +109,19 @@ if (
 
     </div>
 
-
-
     <!-- SUB FILTERS -->
-    <div class="sub-filters">
+    <div
+      class="sub-filters"
+      id="subFilters"
+    >
 
       <div class="sub-tabs">
 
         <button
           class="sub-tab active"
-          data-type="All Jobs"
+          data-type="All"
         >
-          All Jobs
-        </button>
-
-        <button
-          class="sub-tab"
-          data-type="Fresher"
-        >
-          Fresher
-        </button>
-
-        <button
-          class="sub-tab"
-          data-type="Internship"
-        >
-          Internship
+          All
         </button>
 
         <button
@@ -159,14 +133,19 @@ if (
 
         <button
           class="sub-tab"
-          data-type="Experienced"
+          data-type="Internship"
         >
-          Experienced
+          Internship
+        </button>
+
+        <button
+          class="sub-tab"
+          data-type="Fresher"
+        >
+          Fresher
         </button>
 
       </div>
-
-
 
       <!-- SORT -->
       <div class="sort-tabs">
@@ -189,8 +168,6 @@ if (
 
     </div>
 
-
-
     <!-- SEARCH -->
     <div class="search-wrapper">
 
@@ -203,8 +180,6 @@ if (
 
     </div>
 
-
-
     <!-- JOB CARDS -->
     <div
       id="jobsContainer"
@@ -214,8 +189,6 @@ if (
       <!-- Dynamic Jobs -->
 
     </div>
-
-
 
     <!-- NO DATA -->
     <div
@@ -235,110 +208,7 @@ if (
 
   </div>
 
-
-
-  <!-- SCRIPT -->
   <script src="script.js"></script>
-
-
-
-  <!-- DARK MODE + LOGOUT -->
-  <script>
-
-    // ==========================
-    // THEME TOGGLE
-    // ==========================
-
-    const themeToggle =
-    document.getElementById(
-      "themeToggle"
-    );
-
-
-
-    themeToggle.onclick = () => {
-
-      document.body.classList.toggle(
-        "dark-mode"
-      );
-
-
-
-      if (
-        document.body.classList.contains(
-          "dark-mode"
-        )
-      ) {
-
-        localStorage.setItem(
-          "theme",
-          "dark"
-        );
-
-      }
-
-      else {
-
-        localStorage.setItem(
-          "theme",
-          "light"
-        );
-
-      }
-
-    };
-
-
-
-    // LOAD SAVED THEME
-
-    window.onload = () => {
-
-      const savedTheme =
-      localStorage.getItem(
-        "theme"
-      );
-
-
-
-      if(savedTheme === "dark") {
-
-        document.body.classList.add(
-          "dark-mode"
-        );
-
-      }
-
-    };
-
-
-
-    // ==========================
-    // LOGOUT
-    // ==========================
-
-    const logoutBtn =
-    document.getElementById(
-      "studentLogoutBtn"
-    );
-
-
-
-    logoutBtn.addEventListener(
-      "click",
-      () => {
-
-        localStorage.removeItem(
-          "studentLoggedIn"
-        );
-
-        window.location.href =
-        "index.html";
-
-      }
-    );
-
-  </script>
 
 </body>
 </html>
